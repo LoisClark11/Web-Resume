@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body, html {
   margin: 0;
   padding: 0;
@@ -6,6 +9,10 @@ body, html {
 }
 html {
   scroll-behavior: smooth;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 .container {
   display: grid;
@@ -23,10 +30,14 @@ html {
   
 }
 .header {
+  height: 250px;
+  
+  text-align: center;
   display: flex;
   flex-direction: row;
   background: #c3eb3f;
   background: linear-gradient(90deg, rgba(195, 235, 63, 1) 0%, rgba(87, 199, 133, 1) 24%, rgba(237, 221, 83, 1) 100%);
+  align-items: center;
 }
 .name {
   margin: 20px;
@@ -45,7 +56,6 @@ header {
   padding: 10px;
 }
 .navbar a {
-  text-decoration: none;
   color: black;
   font-weight: bold;
 }
@@ -107,12 +117,18 @@ img {
 .contacts {
   border: 1px solid #333;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  
   justify-content: space-around;
   margin: 20px;
   font-size: larger;
   border-radius: 20px;
   padding: 20px;
+}
+.contacts img {
+  width: 30px;
+  height: auto;
+  margin-right: 10px;
 }
 footer {
   display: flex;
@@ -125,4 +141,28 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+}
+@media only screen and (max-width: 320px) {
+  .container {
+    grid-template-areas: 
+      "header"
+      "about"
+      "projects"
+      "experience"
+      "education"
+      "contacts"
+      "footer-section";
+  }
+  .about, .projects, .experience, .education, .contacts {
+    flex-direction: column;
+    text-align: center;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+  .navbar ul li {
+    margin-bottom: 10px;
+  }
 }
