@@ -153,6 +153,9 @@ footer {
       "contacts"
       "footer-section";
   }
+  .name {
+    font-size: 20px;
+  }
   .about, .projects, .experience, .education, .contacts {
     flex-direction: column;
     text-align: center;
