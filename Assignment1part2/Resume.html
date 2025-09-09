@@ -8,6 +8,7 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="container">
   <div class="header">
     <div class="name">
       <h2>Hi, my name<br> is Louise!</h2>
@@ -35,23 +36,27 @@
         <br>understanding of modern web development practices.</p>
     </div>
   </div>
-  <hr>
   <div class="projects" id="projects">
     <h2>Projects:</h2>
     <div class="proj1">
+      <a href="https://github.com/LoisClark11/Login_Form" target="_blank">
       <img src="photos/projicon.jpg" alt="Project 1" class="project-pic">
-      <p>Description of Project 1</p>
+      <p>Log-In System with MySQL Database</p>
+      </a>
     </div>
     <div class="proj2">
+      <a href="https://github.com/LoisClark11/Web-Resume/tree/main" target="_blank">
       <img src="photos/projicon.jpg" alt="Project 2" class="project-pic">
-      <p>Description of Project 2</p>
+      <p>Web Resume</p>
+      </a>
     </div>
     <div class="proj3">
+      <a href="https://github.com/LoisClark11/LinkedList" target="_blank">
       <img src="photos/projicon.jpg" alt="Project 3" class="project-pic">
-      <p>Description of Project 3</p>
+      <p>Linked List Implementation</p>
+      </a>
     </div>
   </div>
-  <hr>
   <div class="experience" id="experience">
     <h2>Experience</h2>
     <ul>
@@ -67,7 +72,6 @@
       </li>
     </ul>
   </div>
-  <hr>
   <div class="education" id="education">
     <h2>Education</h2>
     <ul>
@@ -81,14 +85,13 @@
       </li>
     </ul>
     </div>
-  <hr>
   <h2>Contact Me:</h2>
   <div class="contacts" id="contacts">
     <p>Phone: (123) 456-7890</p>
     <p>Email: louise@example.com</p>
     <p>LinkedIn: linkedin.com/in/louise</p>
   </div>
-  <div>
+  <div class="footer-section">
     <footer>
       <div class="footer-separator">
       <p>&copy; 2024 Louise's Resume</p>
@@ -101,26 +104,6 @@
       <img src="photos/footericon.png" alt="Footer Icon" class="footer-icon">
     </footer>
   </div>
-
-  <!-- Back to Top Button -->
-  <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
-
-  <script>
-    var mybutton = document.getElementById("backToTop");
-
-    // Show the button when scrolling down
-    window.onscroll = function() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    };
-
-    // Scroll back to top when button is clicked
-    mybutton.onclick = function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-  </script>
+</div>
 </body>
 </html>
