@@ -144,6 +144,7 @@ footer {
 }
 @media only screen and (max-width: 320px) {
   body {
+    display: flex;
     flex-direction: row;
   }
   .container {
