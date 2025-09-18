@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  
 }
 body, html {
   margin: 0;
@@ -9,10 +10,13 @@ body, html {
 }
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
-a {
-  color: inherit;
-  text-decoration: none;
+
+body {
+  overflow-x: hidden;
 }
 .container {
   display: grid;
@@ -30,14 +34,17 @@ a {
   
 }
 .header {
-  height: 270px;
-  
+  min-height: 180px;
+  padding: 20px 0;
   text-align: center;
   display: flex;
   flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
   background: #c3eb3f;
   background: linear-gradient(90deg, rgba(195, 235, 63, 1) 0%, rgba(87, 199, 133, 1) 24%, rgba(237, 221, 83, 1) 100%);
   align-items: center;
+  justify-content: center;
 }
 .name {
   margin: 20px;
@@ -55,9 +62,15 @@ header {
   align-items: center;
   padding: 10px;
 }
+.navbar ul {
+  padding: 0;
+  margin: 0;
+}
 .navbar a {
   color: black;
   font-weight: bold;
+  text-decoration: none;
+  font-size: 24px;
 }
 .navbar a:hover {
   text-decoration: underline;
@@ -78,14 +91,6 @@ header {
   border-radius: 20px;
   padding: 20px;
 }
-.profile-pic {
-  border-radius: 50%;
-}
-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 20px;
-}
 .projects {
   border: 1px solid #333;
   display: flex;
@@ -95,6 +100,17 @@ img {
   margin: 20px;
   border-radius: 20px;
   padding: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.proj1 a, .proj2 a, .proj3 a {
+  text-decoration: none;
+  color: black;
+}
+.projects > div {
+  flex: 1 1 220px;
+  max-width: 33%;
+  box-sizing: border-box;
 }
 .experience {
   border: 1px solid #333;
@@ -140,12 +156,26 @@ footer {
   color: white;
   position: relative;
   bottom: 0;
-  width: 100%;
 }
-@media only screen and (max-width: 320px) {
+img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 20px;
+}
+.profile-pic {
+  border-radius: 50%;
+  overflow: hidden;
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+}
+@media only screen and (max-width: 480px) {
   body {
+    max-width: 100vw;
+    overflow-x: hidden;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
   .container {
     display: grid;
@@ -160,33 +190,32 @@ footer {
       "contacts"
       "footer-section";
   }
-  .name {
-    font-size: 20px;
-  }
-  .navbar {
-    flex-direction: row;
-    justify-content: space-around;
+  .header {
+    flex-direction: column;
     align-items: center;
-    padding: 10px 0;
+    padding: 12px;
   }
-  .navbar a {
-    display: flex;
-    flex-direction: row;
-  }
-  .navbar ul {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .about, .projects, .experience, .education, .contacts {
-    flex-direction: column;
-    text-align: center;
-  }
-  .navbar {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-  }
-  .navbar ul li {
-    margin-bottom: 10px;
-  }
+   .name {
+     font-size: 20px;
+   }
+   .navbar {
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     padding: 10px 0;
+   }
+   .navbar li a {
+      font-size: 27px;
+   }
+   .about, .projects, .experience, .education, .contacts {
+     flex-direction: column;
+     text-align: center;
+   }
+   .projects > div {
+     max-width: 100%;
+     width: 100%;
+   }
+   .navbar ul li {
+     margin-bottom: 10px;
+   }
 }
